@@ -1,5 +1,13 @@
-module test_2();
+module fan_speed();
 
+typedef enum logic [1:0] {
+    OFF,
+    LOW,
+    MEDIUM,
+    HIGH
+} speed_t;
+
+speed_t speed;
 /*
 Exercise 2 - Fan Speed
 

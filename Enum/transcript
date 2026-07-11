@@ -1,0 +1,18 @@
+# vsim test_5 -do "add wave -r /*; run -all" 
+# Start time: 20:33:05 on Jul 11,2026
+# Loading sv_std.std
+# Loading work.test_5
+# Loading work.simple_FSM
+# add wave -r /*
+#  run -all
+# ** Note: $finish    : test_5.sv(96)
+#    Time: 20 ns  Iteration: 0  Instance: /test_5
+# 1
+# Break in Module test_5 at test_5.sv line 96
+run
+run
+run
+run
+run
+# End time: 20:37:03 on Jul 11,2026, Elapsed time: 0:03:58
+# Errors: 0, Warnings: 0
