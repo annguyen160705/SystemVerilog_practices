@@ -1,0 +1,57 @@
+module test_1();
+
+/*
+Câu 1 - 2-to-1 Multiplexer
+
+Module
+mux2
+
+Input
+
+sel (1 bit)
+a (8 bit)
+b (8 bit)
+
+Output
+
+out (8 bit)
+
+Yêu cầu
+
+- sel = 0 -> out = a
+- sel = 1 -> out = b
+
+Chỉ sử dụng case.
+
+*/
+
+endmodule   
+
+
+module test_2();
+
+/*
+Câu 2 - 4-to-1 Multiplexer
+
+Module
+mux4
+
+Input
+
+sel (2 bit)
+a,b,c,d (8 bit)
+
+Output
+
+out (8 bit)
+
+Yêu cầu
+
+- 00 -> a
+- 01 -> b
+- 10 -> c
+- 11 -> d
+
+Chỉ sử dụng case.
+
+*/

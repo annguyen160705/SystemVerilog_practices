@@ -1,0 +1,17 @@
+# OpenFile ./tb/tb_traffic_lights.sv
+vsim work.tb_traffic_lights
+# vsim work.tb_traffic_lights 
+# Start time: 10:08:28 on Jul 07,2026
+# Loading sv_std.std
+# Loading work.tb_traffic_lights
+# Loading work.traffic_lights
+add wave -position insertpoint  \
+sim:/tb_traffic_lights/clk \
+sim:/tb_traffic_lights/green \
+sim:/tb_traffic_lights/PERIOD \
+sim:/tb_traffic_lights/red \
+sim:/tb_traffic_lights/rst_n \
+sim:/tb_traffic_lights/yellow
+run
+# End time: 10:35:05 on Jul 07,2026, Elapsed time: 0:26:37
+# Errors: 0, Warnings: 0
