@@ -1,0 +1,10 @@
+# vsim -c -do "run -all; quit" test_2 
+# Start time: 22:22:02 on Jul 13,2026
+# Loading sv_std.std
+# Loading work.test_2
+# run -all
+# Packet 1 - Addr: 0, Data: 0, Write: 0
+# Packet 2 - Addr: 2, Data: 20, Write: 1
+#  quit
+# End time: 22:22:03 on Jul 13,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
