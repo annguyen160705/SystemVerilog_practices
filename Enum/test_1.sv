@@ -1,40 +1,23 @@
-module traffic_lights();
+module test_1();
 
-typedef enum logic [1:0] { 
-    RED,
-    YELLOW,
-    GREEN
-} light_t;
-
-
-light_t light;
-
-always_comb begin
-    light = RED;
-end
 /*
-Exercise 1 - Traffic Light
+Exercise 1 - Array Sum
 
-- Assign light to RED.
+Module
+array_sum
+
+Input
+
+data (8 elements, each 8 bits)
+
+Output
+
+sum (16 bits)
+
+Requirements
+
+Use a for loop to calculate the sum of all elements in the array.
+
 */
-
-endmodule
-
-
-//~ `New testbench
-`timescale  1ns / 1ps
-
-module test_1;
-
-traffic_lights  u_traffic_lights (
-
-);
-
-initial
-begin
-    #10;
-    $display("Traffic Light: %0d", u_traffic_lights.light);
-    #(100) $finish;
-end
 
 endmodule
