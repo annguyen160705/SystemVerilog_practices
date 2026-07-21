@@ -1,5 +1,22 @@
-module test_6();
+module old_parity(
+    input logic [7:0] data,
+    output logic parity
+);
 
+
+function automatic logic odd_parity_func(
+    input logic [7:0]  data_in
+);
+
+    logic parity_bit;
+    parity_bit = ~(^data_in); 
+
+    odd_parity_func = parity_bit;
+
+    
+endfunction
+
+assign parity = odd_parity_func(data);
 /*
 Exercise 6 - Odd Parity
 

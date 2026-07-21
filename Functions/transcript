@@ -1,0 +1,12 @@
+# vsim -c -do "run -all; quit" test_5 
+# Start time: 15:41:26 on Jul 16,2026
+# Loading sv_std.std
+# Loading work.test_5
+# Loading work.count_ones
+# run -all
+# value   3 count  2
+# value   4 count  1
+# ** Note: $finish    : test_5.sv(62)
+#    Time: 20 ns  Iteration: 0  Instance: /test_5
+# End time: 15:41:26 on Jul 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
