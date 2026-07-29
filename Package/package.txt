@@ -1,0 +1,123 @@
+----------------------------------------------------
+Style 1 - Package with Wildcard Import (Most Common)
+----------------------------------------------------
+
+package math_pkg;
+
+    parameter DATA_WIDTH = 32;
+
+    function automatic logic [7:0] max2(
+        input logic [7:0] a,
+        input logic [7:0] b
+    );
+        return (a > b) ? a : b;
+    endfunction
+
+endpackage
+
+Usage
+
+import math_pkg::*;
+
+assign max = max2(a, b);
+
+----------------------------------------------------
+Style 2 - Package with Specific Import
+----------------------------------------------------
+
+package math_pkg;
+
+    function automatic logic [7:0] max2(
+        input logic [7:0] a,
+        input logic [7:0] b
+    );
+        return (a > b) ? a : b;
+    endfunction
+
+endpackage
+
+Usage
+
+import math_pkg::max2;
+
+assign max = max2(a, b);
+
+----------------------------------------------------
+Style 3 - Scope Resolution Operator (::)
+----------------------------------------------------
+
+package math_pkg;
+
+    function automatic logic [7:0] max2(
+        input logic [7:0] a,
+        input logic [7:0] b
+    );
+        return (a > b) ? a : b;
+    endfunction
+
+endpackage
+
+Usage
+
+assign max = math_pkg::max2(a, b);
+
+----------------------------------------------------
+Style 4 - Package with Typedef + Function
+----------------------------------------------------
+
+package math_pkg;
+
+    typedef logic [7:0] data_t;
+
+    function automatic data_t max2(
+        input data_t a,
+        input data_t b
+    );
+        return (a > b) ? a : b;
+    endfunction
+
+endpackage
+
+Usage
+
+import math_pkg::*;
+
+data_t max;
+
+assign max = max2(a, b);
+
+----------------------------------------------------
+Style 5 - Package as Utility Library
+----------------------------------------------------
+
+package util_pkg;
+
+    function automatic logic [7:0] max2(
+        input logic [7:0] a,
+        input logic [7:0] b
+    );
+        return (a > b) ? a : b;
+    endfunction
+
+    function automatic logic [7:0] min2(
+        input logic [7:0] a,
+        input logic [7:0] b
+    );
+        return (a < b) ? a : b;
+    endfunction
+
+    function automatic logic is_even(
+        input logic [7:0] value
+    );
+        return ~value[0];
+    endfunction
+
+endpackage
+
+Usage
+
+import util_pkg::*;
+
+assign max  = max2(a, b);
+assign min  = min2(a, b);
+assign even = is_even(data);
