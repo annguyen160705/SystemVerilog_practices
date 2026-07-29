@@ -1,0 +1,173 @@
+----------------------------------------------------
+Style 1 - Basic Generate For (Most Common)
+----------------------------------------------------
+
+generate
+    for (genvar i = 0; i < N; i++) begin
+        ...
+    end
+endgenerate
+
+Usage
+
+Instantiate identical hardware multiple times.
+
+----------------------------------------------------
+Style 2 - Named Generate Block (Recommended)
+----------------------------------------------------
+
+generate
+    for (genvar i = 0; i < N; i++) begin : GEN_BLOCK
+        ...
+    end
+endgenerate
+
+Usage
+
+Recommended for debugging and hierarchical references.
+
+----------------------------------------------------
+Style 3 - Generate If
+----------------------------------------------------
+
+generate
+    if (DATA_WIDTH == 8) begin
+        ...
+    end
+    else begin
+        ...
+    end
+endgenerate
+
+Usage
+
+Instantiate different hardware based on parameters.
+
+----------------------------------------------------
+Style 4 - Generate Case
+----------------------------------------------------
+
+generate
+    case (MODE)
+        0 : begin
+            ...
+        end
+
+        1 : begin
+            ...
+        end
+
+        default : begin
+            ...
+        end
+    endcase
+endgenerate
+
+Usage
+
+Select one hardware implementation among multiple options.
+
+----------------------------------------------------
+Style 5 - Nested Generate
+----------------------------------------------------
+
+generate
+    for (genvar i = 0; i < ROW; i++) begin : ROW_GEN
+        for (genvar j = 0; j < COL; j++) begin : COL_GEN
+            ...
+        end
+    end
+endgenerate
+
+Usage
+
+Generate 2D structures such as memory arrays or crossbars.
+
+----------------------------------------------------
+Style 6 - Multiple Generate Blocks
+----------------------------------------------------
+
+generate
+    if (...) begin
+        ...
+    end
+endgenerate
+
+generate
+    for (...) begin
+        ...
+    end
+endgenerate
+
+Usage
+
+Separate unrelated generated hardware into independent blocks.
+
+----------------------------------------------------
+Style 7 - Parameterized Generate
+----------------------------------------------------
+
+parameter WIDTH = 32;
+
+generate
+    for (genvar i = 0; i < WIDTH; i++) begin
+        ...
+    end
+endgenerate
+
+Usage
+
+Build scalable RTL.
+
+----------------------------------------------------
+Style 8 - Generate with Module Instantiation
+----------------------------------------------------
+
+generate
+    for (genvar i = 0; i < N; i++) begin : GEN
+        full_adder u_fa (...);
+    end
+endgenerate
+
+Usage
+
+Instantiate multiple module instances.
+
+----------------------------------------------------
+Style 9 - Generate with Localparam
+----------------------------------------------------
+
+localparam USE_PARITY = 1;
+
+generate
+    if (USE_PARITY) begin
+        ...
+    end
+endgenerate
+
+Usage
+
+Enable or disable optional hardware.
+
+----------------------------------------------------
+Style 10 - Mixed Generate
+----------------------------------------------------
+
+generate
+
+    if (ENABLE) begin
+
+        for (genvar i = 0; i < WIDTH; i++) begin : GEN
+            ...
+        end
+
+    end
+    else begin
+        ...
+    end
+
+endgenerate
+
+Usage
+
+Combine conditional generation and repetitive generation in one block.
