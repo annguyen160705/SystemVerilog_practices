@@ -1,0 +1,219 @@
+----------------------------------------------------
+Style 1 - Single Modport
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    modport <modport_name> (
+        ...
+    );
+
+endinterface
+
+Example
+
+master
+
+----------------------------------------------------
+Style 2 - Multiple Modports
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    modport <modport_1> (
+        ...
+    );
+
+    modport <modport_2> (
+        ...
+    );
+
+endinterface
+
+Example
+
+master / slave
+
+----------------------------------------------------
+Style 3 - Modport with Parameterized Interface
+----------------------------------------------------
+
+interface <interface_name> #(
+    parameter ...
+);
+
+    // Signals
+
+    modport <modport_name> (
+        ...
+    );
+
+endinterface
+
+Example
+
+Parameterized Memory Interface
+
+----------------------------------------------------
+Style 4 - Modport with Clock/Reset
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Clock
+    // Reset
+    // Signals
+
+    modport <modport_name> (
+        ...
+    );
+
+endinterface
+
+Example
+
+Synchronous Bus
+
+----------------------------------------------------
+Style 5 - Modport with Function
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    function automatic ...;
+
+    endfunction
+
+    modport <modport_name> (
+        ...
+    );
+
+endinterface
+
+Example
+
+Utility Interface
+
+----------------------------------------------------
+Style 6 - Modport with Task
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    task automatic ...;
+
+    endtask
+
+    modport <modport_name> (
+        ...
+    );
+
+endinterface
+
+Example
+
+Initialization Interface
+
+----------------------------------------------------
+Style 7 - Modport with Package
+----------------------------------------------------
+
+import <package_name>::*;
+
+interface <interface_name>;
+
+    // Signals
+
+    modport <modport_name> (
+        ...
+    );
+
+endinterface
+
+Example
+
+CPU Interface
+
+----------------------------------------------------
+Style 8 - Protocol Modport
+----------------------------------------------------
+
+interface <protocol_name>_if;
+
+    // Protocol Signals
+
+    modport <master> (
+        ...
+    );
+
+    modport <slave> (
+        ...
+    );
+
+endinterface
+
+Example
+
+APB / AXI / AHB
+
+----------------------------------------------------
+Style 9 - Verification Modport
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    modport <dut> (
+        ...
+    );
+
+    modport <tb> (
+        ...
+    );
+
+endinterface
+
+Example
+
+Testbench Interface
+
+----------------------------------------------------
+Style 10 - Complete Reusable Modport
+----------------------------------------------------
+
+interface <interface_name> #(
+    parameter ...
+);
+
+    // Signals
+
+    function ...;
+
+    endfunction
+
+    task ...;
+
+    endtask
+
+    modport <modport_1> (
+        ...
+    );
+
+    modport <modport_2> (
+        ...
+    );
+
+endinterface
+
+Example
+
+Reusable Bus Interface

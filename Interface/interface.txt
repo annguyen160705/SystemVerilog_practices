@@ -1,0 +1,173 @@
+----------------------------------------------------
+Style 1 - Basic Interface
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+endinterface
+
+Example
+
+GPIO Interface
+
+----------------------------------------------------
+Style 2 - Parameterized Interface
+----------------------------------------------------
+
+interface <interface_name> #(
+    parameter ...
+);
+
+    // Signals
+
+endinterface
+
+Example
+
+Memory Interface
+
+----------------------------------------------------
+Style 3 - Interface with Modport
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    modport master (...);
+
+    modport slave (...);
+
+endinterface
+
+Example
+
+SPI Interface
+
+----------------------------------------------------
+Style 4 - Interface with Function
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    function automatic ...;
+
+    endfunction
+
+endinterface
+
+Example
+
+CRC Utility Interface
+
+----------------------------------------------------
+Style 5 - Interface with Task
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    task automatic ...;
+
+    endtask
+
+endinterface
+
+Example
+
+Initialization Interface
+
+----------------------------------------------------
+Style 6 - Interface with Clocking Signals
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Clock
+    // Reset
+    // Control Signals
+
+endinterface
+
+Example
+
+Counter Interface
+
+----------------------------------------------------
+Style 7 - Interface with Generate
+----------------------------------------------------
+
+interface <interface_name> #(
+    parameter ...
+);
+
+    generate
+        ...
+    endgenerate
+
+endinterface
+
+Example
+
+Multi-Channel Interface
+
+----------------------------------------------------
+Style 8 - Interface with Package
+----------------------------------------------------
+
+import <package_name>::*;
+
+interface <interface_name>;
+
+    ...
+
+endinterface
+
+Example
+
+CPU Interface
+
+----------------------------------------------------
+Style 9 - Interface with Clocking Block
+----------------------------------------------------
+
+interface <interface_name>;
+
+    // Signals
+
+    clocking ...;
+
+    endclocking
+
+endinterface
+
+Example
+
+Verification Interface
+
+----------------------------------------------------
+Style 10 - Complete Reusable Interface
+----------------------------------------------------
+
+interface <interface_name> #(
+    parameter ...
+);
+
+    // Signals
+
+    function ...;
+
+    task ...;
+
+    modport ...;
+
+endinterface
+
+Example
+
+Bus Interface
