@@ -1,219 +1,55 @@
-----------------------------------------------------
-Style 1 - Single Modport
-----------------------------------------------------
+interface bus_if;
 
-interface <interface_name>;
+    logic data;
+    logic valid;
+    logic ready;
 
-    // Signals
+    modport master (
+        output data,
+        output valid,
+        input  ready
+    );
 
-    modport <modport_name> (
-        ...
+    modport slave (
+        input  data,
+        input  valid,
+        output ready
     );
 
 endinterface
 
-Example
 
-master
-
-----------------------------------------------------
-Style 2 - Multiple Modports
-----------------------------------------------------
-
-interface <interface_name>;
-
-    // Signals
-
-    modport <modport_1> (
-        ...
-    );
-
-    modport <modport_2> (
-        ...
-    );
-
-endinterface
-
-Example
-
-master / slave
-
-----------------------------------------------------
-Style 3 - Modport with Parameterized Interface
-----------------------------------------------------
-
-interface <interface_name> #(
-    parameter ...
+module producer(
+    bus_if.master bus
 );
 
-    // Signals
+    always_comb begin
+        bus.data  = 1'b1;   // Ghi vào interface
+        bus.valid = 1'b1;   // Ghi vào interface
+    end
 
-    modport <modport_name> (
-        ...
-    );
+endmodule
 
-endinterface
 
-Example
-
-Parameterized Memory Interface
-
-----------------------------------------------------
-Style 4 - Modport with Clock/Reset
-----------------------------------------------------
-
-interface <interface_name>;
-
-    // Clock
-    // Reset
-    // Signals
-
-    modport <modport_name> (
-        ...
-    );
-
-endinterface
-
-Example
-
-Synchronous Bus
-
-----------------------------------------------------
-Style 5 - Modport with Function
-----------------------------------------------------
-
-interface <interface_name>;
-
-    // Signals
-
-    function automatic ...;
-
-    endfunction
-
-    modport <modport_name> (
-        ...
-    );
-
-endinterface
-
-Example
-
-Utility Interface
-
-----------------------------------------------------
-Style 6 - Modport with Task
-----------------------------------------------------
-
-interface <interface_name>;
-
-    // Signals
-
-    task automatic ...;
-
-    endtask
-
-    modport <modport_name> (
-        ...
-    );
-
-endinterface
-
-Example
-
-Initialization Interface
-
-----------------------------------------------------
-Style 7 - Modport with Package
-----------------------------------------------------
-
-import <package_name>::*;
-
-interface <interface_name>;
-
-    // Signals
-
-    modport <modport_name> (
-        ...
-    );
-
-endinterface
-
-Example
-
-CPU Interface
-
-----------------------------------------------------
-Style 8 - Protocol Modport
-----------------------------------------------------
-
-interface <protocol_name>_if;
-
-    // Protocol Signals
-
-    modport <master> (
-        ...
-    );
-
-    modport <slave> (
-        ...
-    );
-
-endinterface
-
-Example
-
-APB / AXI / AHB
-
-----------------------------------------------------
-Style 9 - Verification Modport
-----------------------------------------------------
-
-interface <interface_name>;
-
-    // Signals
-
-    modport <dut> (
-        ...
-    );
-
-    modport <tb> (
-        ...
-    );
-
-endinterface
-
-Example
-
-Testbench Interface
-
-----------------------------------------------------
-Style 10 - Complete Reusable Modport
-----------------------------------------------------
-
-interface <interface_name> #(
-    parameter ...
+module consumer(
+    bus_if.slave bus
 );
 
-    // Signals
+    always_comb begin
+        if (bus.valid)
+            bus.ready = 1'b1;   // Ghi vào interface
+        else
+            bus.ready = 1'b0;
+    end
 
-    function ...;
+endmodule
 
-    endfunction
 
-    task ...;
+module top;
 
-    endtask
+    bus_if bus();
 
-    modport <modport_1> (
-        ...
-    );
+    producer u_producer(bus);
+    consumer u_consumer(bus);
 
-    modport <modport_2> (
-        ...
-    );
-
-endinterface
-
-Example
-
-Reusable Bus Interface
+endmodule

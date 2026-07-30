@@ -1,20 +1,30 @@
 module test_8();
 
 /*
-Exercise 8 - APB Modport
+Exercise 8 - UART Interface
 
 Interface
-apb_if
+uart_if
 
 Requirements
 
-Create modports for:
+Create one interface containing:
 
-- APB Master
-- APB Slave
+- clk
+- rst_n
+- tx
+- rx
+- tx_valid
+- rx_valid
 
-Assign proper signal directions
-according to the APB protocol.
+Create:
+
+- transmitter
+- receiver
+- monitor
+
+Assign directions
+for all signals.
 
 */
 

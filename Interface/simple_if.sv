@@ -1,4 +1,4 @@
-module test_1();
+
 
 /*
 Exercise 1 - Basic Interface
@@ -17,4 +17,11 @@ valid
 
 */
 
-endmodule
+
+
+interface simple_if;
+    logic clk;
+    logic rst_n;
+    logic [7:0] data;
+    logic valid;
+endinterface

@@ -8,14 +8,21 @@ control_if
 
 Requirements
 
-Create three modports:
+Create one interface containing:
+
+- clk
+- rst_n
+- enable
+- done
+
+Create:
 
 - producer
 - consumer
 - monitor
 
-Each modport
-has different directions.
+Assign directions
+for all signals.
 
 */
 

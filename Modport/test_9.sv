@@ -1,19 +1,34 @@
 module test_9();
 
 /*
-Exercise 9 - Verification Modport
+Exercise 9 - APB Interface
+
+Interface
+apb_if
 
 Requirements
 
-Create an interface.
+Create one interface containing:
 
-Create modports for:
+- PCLK
+- PRESETn
+- PSEL
+- PENABLE
+- PWRITE
+- PADDR (32 bits)
+- PWDATA (32 bits)
+- PRDATA (32 bits)
+- PREADY
+- PSLVERR
 
-- DUT
-- Testbench
+Create:
 
-Use different signal directions
-for each side.
+- master
+- slave
+- monitor
+
+Assign directions
+for all signals.
 
 */
 

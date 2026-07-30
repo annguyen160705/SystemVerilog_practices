@@ -3,16 +3,28 @@ module test_5();
 /*
 Exercise 5 - Memory Interface
 
+Interface
+memory_if
+
 Requirements
 
-Design a memory interface.
+Create one interface containing:
 
-Create modports for:
+- clk
+- rst_n
+- addr (16 bits)
+- wdata (32 bits)
+- rdata (32 bits)
+- write
+- read
 
-- controller
+Create:
+
+- cpu
 - memory
 
-Assign proper signal directions.
+Assign directions
+for all signals.
 
 */
 

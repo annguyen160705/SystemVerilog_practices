@@ -1,20 +1,28 @@
 module test_3();
 
 /*
-Exercise 3 - Module Connection
+Exercise 3 - Data Interface
+
+Interface
+data_if
 
 Requirements
 
-Create one interface
-with modports.
+Create one interface containing:
 
-Instantiate:
+- clk
+- rst_n
+- data (8 bits)
+- valid
+- ready
 
-- one producer
-- one consumer
+Create:
 
-Connect each module
-using the proper modport.
+- transmitter
+- receiver
+
+Assign directions
+for all signals.
 
 */
 

@@ -1,17 +1,32 @@
 module test_7();
 
 /*
-Exercise 7 - Interface Package
+Exercise 7 - FIFO Interface
+
+Interface
+fifo_if
 
 Requirements
 
-Create a package.
+Create one interface containing:
 
-Import the package
-inside an interface.
+- clk
+- rst_n
+- wr_en
+- rd_en
+- wdata (8 bits)
+- rdata (8 bits)
+- full
+- empty
 
-Create modports
-using package typedefs.
+Create:
+
+- writer
+- reader
+- monitor
+
+Assign directions
+for all signals.
 
 */
 

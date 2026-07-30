@@ -1,16 +1,30 @@
 module test_6();
 
 /*
-Exercise 6 - Modport with Clock
+Exercise 6 - Streaming Interface
+
+Interface
+stream_if
 
 Requirements
 
-Create an interface
-containing clock,
-reset and data signals.
+Create one interface containing:
 
-Create suitable modports
-for synchronous communication.
+- clk
+- rst_n
+- data (32 bits)
+- valid
+- ready
+- last
+
+Create:
+
+- source
+- sink
+- monitor
+
+The monitor
+only observes signals.
 
 */
 

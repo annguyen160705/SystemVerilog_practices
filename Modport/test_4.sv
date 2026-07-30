@@ -3,15 +3,32 @@ module test_4();
 /*
 Exercise 4 - Parameterized Interface
 
+Interface
+packet_if
+
 Requirements
 
 Create a parameterized interface.
 
-Create master
-and slave modports.
+Parameters
 
-All signals shall
-use the parameters.
+- DATA_WIDTH = 16
+
+Create the following signals:
+
+- clk
+- rst_n
+- data
+- valid
+- ready
+
+Create:
+
+- master
+- slave
+
+Use DATA_WIDTH
+for the data bus.
 
 */
 

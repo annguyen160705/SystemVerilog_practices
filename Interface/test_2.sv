@@ -1,4 +1,12 @@
-module test_2();
+module top();
+
+instan producer;
+instan consumer;
+
+always_comb begin
+    consumer.in = producer.in; 
+    consumer.out = producer.out; 
+end
 
 /*
 Exercise 2 - Interface Instantiation
@@ -17,3 +25,8 @@ and one consumer module.
 */
 
 endmodule
+
+interface instan ;
+    logic in;
+    logic out;
+endinterface
