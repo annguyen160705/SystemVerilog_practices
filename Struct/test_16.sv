@@ -6,13 +6,13 @@ Exercise 16 - Structure Comparison
 Requirements:
 - Create a packed struct named command_t.
 - Fields:
-    * opcode
-    * address
-    * data
-
-- Declare two commands.
-- Compare the structures.
-- Display whether they are equal.
+    * opcode  (4 bits)
+    * address (16 bits)
+    * data    (32 bits)
+- Declare two command_t variables.
+- Assign different values to both structures.
+- Compare the complete structures.
+- Display whether they are equal or different.
 
 */
 

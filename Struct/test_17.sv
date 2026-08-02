@@ -1,20 +1,23 @@
 module test_17();
 
 /*
-Exercise 17 - Struct to Vector
+Exercise 17 - Structure to Vector
 
 Requirements:
 - Create a packed struct named instruction_t.
 - Fields:
-    * opcode
-    * rs1
-    * rs2
-    * rd
-    * funct
+    * opcode (6 bits)
+    * rs1    (5 bits)
+    * rs2    (5 bits)
+    * rd     (5 bits)
+    * funct  (11 bits)
 
-- Declare a 32-bit vector.
-- Pack the structure into the vector.
-- Display the vector.
+- The total struct width must be 32 bits.
+- Declare one instruction_t variable.
+- Declare one 32-bit vector named instruction_word.
+- Initialize every struct field.
+- Pack the complete structure into instruction_word.
+- Display instruction_word.
 
 */
 
