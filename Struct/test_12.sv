@@ -1,5 +1,18 @@
 module test_12();
 
+
+typedef struct packed {
+    logic [31:0] src_addr;
+    logic [31:0] dst_addr;
+    logic [15:0] length;
+    logic [15:0] checksum;
+    logic valid;
+} packet_t;
+
+packet_t var = '{
+    default: '0
+};
+
 /*
 Exercise 12 - Network Packet
 

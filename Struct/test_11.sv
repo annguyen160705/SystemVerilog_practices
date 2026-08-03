@@ -1,5 +1,21 @@
 module test_11();
 
+typedef struct packed {
+    logic [15:0] id;
+    logic [7:0] age;
+    logic [3:0] department;
+    logic  active;
+} employee_t;
+
+employee_t var = '{
+    default: '0
+};
+
+
+
+
+
+
 /*
 Exercise 11 - Employee Record
 
