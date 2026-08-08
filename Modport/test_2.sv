@@ -1,4 +1,8 @@
-module test_2();
+module test_2(
+    
+    control_if.slave consumer;
+    
+);
 
 
 
@@ -29,3 +33,31 @@ for all signals.
 */
 
 endmodule
+
+module producer(
+    control_if.master bus;
+);
+    
+endmodule
+
+
+interface control_if;
+    
+
+    modport master (
+        output logic clk;
+        output logic rst_n;
+        output logic enable;
+        input logic done;
+    );
+    
+    modport slave (
+        input logic clk;
+        input logic rst_n;
+        input logic enable;
+        output logic done;
+    );
+
+
+
+endinterface
