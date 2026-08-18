@@ -22,7 +22,6 @@ register_t var_2 = '{
 initial begin
     
     var_2 = var_1;
-
     $display("address : %0d \ndata : %0d \nwrite_en: %0d", var_2.address, var_2.data, var_2.write_enable );
 
 
