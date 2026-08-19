@@ -1,5 +1,22 @@
 module test_15();
 
+typedef struct packed {
+    logic [5:0] opcode;
+    logic [9:0] length;
+} header_t;
+
+
+typedef struct packed {
+    header_t header;
+    logic [31:0] payload;
+    logic valid;
+} packet_t;
+
+packet_t var = '{
+    default: '0
+};
+
+
 /*
 Exercise 15 - Nested Structure
 
@@ -17,7 +34,6 @@ Requirements:
 
 - Declare one packet_t variable.
 - Initialize every field.
-- Display all nested fields.
 
 */
 
